@@ -24,6 +24,7 @@ provider "discord" {
 resource "discord_server" "pasokonistan" {
   name          = "パソコニスタン"
   region        = "japan"
+  owner_id      = data.discord_member.sksat.id
   icon_data_uri = data.discord_local_image.logo.data_uri
 }
 data "discord_local_image" "logo" {
