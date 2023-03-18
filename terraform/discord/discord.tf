@@ -25,3 +25,9 @@ resource "discord_server" "pasokonistan" {
   name   = "パソコニスタン"
   region = "japan"
 }
+
+resource "discord_category_channel" "pasokon" {
+  name      = "パソコン"
+  server_id = discord_server.pasokonistan.id
+  position  = 0
+}
