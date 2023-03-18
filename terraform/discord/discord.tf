@@ -22,8 +22,12 @@ provider "discord" {
 }
 
 resource "discord_server" "pasokonistan" {
-  name   = "パソコニスタン"
-  region = "japan"
+  name          = "パソコニスタン"
+  region        = "japan"
+  icon_data_uri = data.discord_local_image.logo.data_uri
+}
+data "discord_local_image" "logo" {
+  file = "./computer_screen_programming.png"
 }
 
 resource "discord_category_channel" "pasokon" {
