@@ -29,3 +29,8 @@ resource "discord_server" "pasokonistan" {
 data "discord_local_image" "logo" {
   file = "./computer_screen_programming.png"
 }
+
+data "discord_member" "sksat" {
+  server_id = discord_server.pasokonistan.id
+  user_id   = "281041763009822720"
+}
