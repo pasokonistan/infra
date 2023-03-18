@@ -15,3 +15,8 @@ terraform {
   }
 }
 
+variable "DISCORD_TERRAFORM_TOKEN" {}
+
+provider discord {
+  token = var.DISCORD_TERRAFORM_TOKEN
+}
