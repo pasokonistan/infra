@@ -22,7 +22,6 @@ provider "discord" {
 }
 
 resource "discord_server" "pasokonistan" {
-  name     = "パソコニスタン"
-  region   = "japan"
-  owner_id = "281041763009822720" # sksat
+  name   = "パソコニスタン"
+  region = "japan"
 }
