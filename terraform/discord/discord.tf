@@ -15,3 +15,13 @@ terraform {
   }
 }
 
+variable "DISCORD_TERRAFORM_TOKEN" {}
+
+provider "discord" {
+  token = var.DISCORD_TERRAFORM_TOKEN
+}
+
+resource "discord_server" "pasokonistan" {
+  name   = "パソコニスタン"
+  region = "japan"
+}
