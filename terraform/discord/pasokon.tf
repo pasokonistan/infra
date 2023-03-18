@@ -16,3 +16,9 @@ resource "discord_text_channel" "zatsu" {
   server_id = discord_server.pasokonistan.id
   category  = discord_category_channel.pasokon.id
 }
+
+resource "discord_text_channel" "pasokey" {
+  name      = "pasokey"
+  server_id = discord_server.pasokonistan.id
+  category  = discord_category_channel.pasokon.id
+}
