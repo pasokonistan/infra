@@ -25,6 +25,9 @@ resource "discord_server" "pasokonistan" {
   name   = "パソコニスタン"
   region = "japan"
 }
+data "discord_local_image" "logo" {
+  file = "./computer_screen_programming.png"
+}
 
 resource "discord_category_channel" "pasokon" {
   name      = "パソコン"
