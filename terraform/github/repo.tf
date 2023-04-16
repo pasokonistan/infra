@@ -1,6 +1,6 @@
 resource "github_repository" "infra" {
   name        = "infra"
-  description = ""
+  description = "pasokonistan infrastracture"
   visibility  = "private"
 
   has_downloads = true
