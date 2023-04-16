@@ -34,5 +34,5 @@ resource "github_team_membership" "pasokonistan" {
 
   for_each = toset(local.users_paspkonistan)
   username = each.value
-  role     = "member"
+  role     = each.value == local.users_paspkonistan[0] ? "maintainer" : "member"
 }
