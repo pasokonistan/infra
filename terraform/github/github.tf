@@ -15,4 +15,9 @@ terraform {
   }
 }
 
-provider "github" {}
+provider "github" {
+  owner = "pasokonistan"
+
+  # https://registry.terraform.io/providers/integrations/github/latest/docs#github-app-installation
+  app_auth {}
+}
