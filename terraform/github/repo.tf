@@ -24,7 +24,7 @@ resource "github_repository" "infra" {
 resource "github_team_repository" "infra" {
   team_id    = github_team.infra.id
   repository = github_repository.infra.name
-  permission = "read"
+  permission = "pull"
 }
 
 resource "github_repository" "pasokon-site" {
