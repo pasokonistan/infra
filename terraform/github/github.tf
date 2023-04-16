@@ -26,7 +26,7 @@ resource "github_organization_settings" "pasokonistan" {
   name        = "pasokonistan"
   description = "パソコンの国，パソコニスタン"
 
-  billing_email = ""
+  billing_email = "sksat+pasokonistan@sksat.net"
   blog          = "https://pasokon.site/"
 
   default_repository_permission = "read"
