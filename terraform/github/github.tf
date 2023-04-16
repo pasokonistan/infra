@@ -29,7 +29,7 @@ resource "github_organization_settings" "pasokonistan" {
   billing_email = "sksat+pasokonistan@sksat.net"
   blog          = "https://pasokon.site/"
 
-  default_repository_permission = "read"
+  default_repository_permission = "none"
 
   has_organization_projects = true
   has_repository_projects   = true
