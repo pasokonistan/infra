@@ -1,6 +1,7 @@
 locals {
   users_paspkonistan = [
     "sksat",
+    "Totsugekitai",
   ]
 }
 
