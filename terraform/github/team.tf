@@ -5,7 +5,6 @@ locals {
   ]
   users_infra = [
     "sksat",
-    "Totsugekitai",
   ]
   users_infra_admin = [
     "sksat",
