@@ -3,6 +3,12 @@ locals {
     "sksat",
     "Totsugekitai",
   ]
+  users_infra = [
+    "sksat",
+  ]
+  users_infra_admin = [
+    "sksat",
+  ]
 }
 
 # team
@@ -36,4 +42,18 @@ resource "github_team_membership" "pasokonistan" {
   for_each = toset(local.users_paspkonistan)
   username = each.value
   role     = each.value == local.users_paspkonistan[0] ? "maintainer" : "member"
+}
+resource "github_team_membership" "infra" {
+  team_id = github_team.infra.id
+
+  for_each = toset(local.users_infra)
+  username = each.value
+  role     = each.value == local.users_infra[0] ? "maintainer" : "member"
+}
+resource "github_team_membership" "infra_admin" {
+  team_id = github_team.infra_admin.id
+
+  for_each = toset(local.users_infra_admin)
+  username = each.value
+  role     = each.value == local.users_infra_admin[0] ? "maintainer" : "member"
 }
