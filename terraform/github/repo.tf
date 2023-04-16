@@ -21,6 +21,12 @@ resource "github_repository" "infra" {
   squash_merge_commit_title   = "COMMIT_OR_PR_TITLE"
 }
 
+resource "github_team_repository" "infra" {
+  team_id    = github_team.infra.id
+  repository = github_repository.infra.name
+  permission = "read"
+}
+
 resource "github_repository" "pasokon-site" {
   name         = "pasokon.site"
   description  = "パソコニスタン首都"
