@@ -11,6 +11,9 @@ resource "github_repository" "infra" {
   allow_rebase_merge = false
   allow_squash_merge = false
 
+  allow_update_branch    = true
+  delete_branch_on_merge = true
+
   merge_commit_title   = "MERGE_MESSAGE"
   merge_commit_message = "PR_TITLE"
 
@@ -31,6 +34,9 @@ resource "github_repository" "pasokon-site" {
   allow_merge_commit = true
   allow_rebase_merge = false
   allow_squash_merge = false
+
+  allow_update_branch    = true
+  delete_branch_on_merge = true
 
   merge_commit_title   = "MERGE_MESSAGE"
   merge_commit_message = "PR_TITLE"
