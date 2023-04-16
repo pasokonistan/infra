@@ -79,3 +79,12 @@ resource "github_repository" "pasopedia" {
 
   vulnerability_alerts = true
 }
+
+resource "github_repository_collaborators" "pasopedia" {
+  repository = github_repository.pasopedia.name
+
+  user {
+    username   = "Amphitrite632"
+    permission = "maintain"
+  }
+}
