@@ -29,7 +29,7 @@ resource "github_branch_protection" "infra" {
   allows_deletions    = false
   allows_force_pushes = false
   blocks_creations    = false
-  enforce_admins      = false
+  enforce_admins      = true
   lock_branch         = false
 
   require_conversation_resolution = false
