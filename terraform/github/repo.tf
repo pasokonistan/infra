@@ -29,8 +29,8 @@ resource "github_branch_protection" "infra" {
   allows_deletions    = false
   allows_force_pushes = false
   blocks_creations    = false
-  enforce_admins      = true
-  lock_branch         = true
+  enforce_admins      = false
+  lock_branch         = false
 
   require_conversation_resolution = false
   require_signed_commits          = true
