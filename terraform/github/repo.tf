@@ -21,6 +21,35 @@ resource "github_repository" "infra" {
   squash_merge_commit_title   = "COMMIT_OR_PR_TITLE"
 }
 
+resource "github_branch_protection" "infra" {
+  repository_id = github_repository.infra.node_id
+
+  pattern = "main"
+
+  allows_deletions    = false
+  allows_force_pushes = false
+  blocks_creations    = false
+  enforce_admins      = false
+  lock_branch         = false
+
+  require_conversation_resolution = false
+  require_signed_commits          = true
+  required_linear_history         = false # Enable squashing or rebasing merge strategy on this repository to use this rule.
+
+  required_status_checks {
+    strict = true
+    contexts = [
+      "Terraform Cloud/pasokonistan/infra-github",
+      "Terraform Cloud/pasokonistan/infra-discord",
+    ]
+  }
+
+  required_pull_request_reviews {
+    dismiss_stale_reviews      = true
+    require_code_owner_reviews = true
+  }
+}
+
 resource "github_team_repository" "infra" {
   team_id    = github_team.infra.id
   repository = github_repository.infra.name
