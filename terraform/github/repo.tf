@@ -30,7 +30,7 @@ resource "github_branch_protection" "infra" {
   allows_force_pushes = false
   blocks_creations    = false
   enforce_admins      = false
-  lock_branch         = true
+  lock_branch         = false
 
   require_conversation_resolution = false
   require_signed_commits          = true
