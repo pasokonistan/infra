@@ -9,6 +9,10 @@ locals {
   users_infra_admin = [
     "sksat",
   ]
+  users_pasopedia = [
+    "sksat",
+    "Totsugekitai",
+  ]
 }
 
 # team
@@ -35,6 +39,18 @@ resource "github_team" "infra_admin" {
   privacy        = "closed"
 }
 
+resource "github_team" "pasopedia" {
+  parent_team_id = github_team.pasokonistan.id
+  name           = "pasopedia"
+  description    = "pasopedia maintainer"
+  privacy        = "closed"
+}
+resource "github_team_repository" "pasopedia" {
+  team_id    = github_team.pasopedia.id
+  repository = "pasopedia"
+  permission = "maintain"
+}
+
 
 resource "github_team_membership" "pasokonistan" {
   team_id = github_team.pasokonistan.id
@@ -56,4 +72,12 @@ resource "github_team_membership" "infra_admin" {
   for_each = toset(local.users_infra_admin)
   username = each.value
   role     = each.value == local.users_infra_admin[0] ? "maintainer" : "member"
+}
+
+resource "github_team_membership" "pasopedia" {
+  team_id = github_team.pasopedia.id
+
+  for_each = toset(local.users_pasopedia)
+  username = each.value
+  role     = each.value == local.users_pasopedia[0] ? "maintainer" : "member"
 }
