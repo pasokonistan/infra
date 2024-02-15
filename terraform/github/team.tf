@@ -2,6 +2,7 @@ locals {
   users_paspkonistan = [
     "sksat",
     "Totsugekitai",
+    "sosukesuzuki",
   ]
   users_infra = [
     "sksat",
