@@ -10,7 +10,7 @@ terraform {
   required_providers {
     discord = {
       source  = "Lucky3028/discord"
-      version = "1.6.1"
+      version = "1.9.0"
     }
   }
 }
